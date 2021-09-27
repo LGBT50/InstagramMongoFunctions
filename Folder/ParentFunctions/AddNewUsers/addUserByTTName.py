@@ -16,9 +16,10 @@ def addNewUsers(user_ids):
     count1 = 0
     for x in user_ids:
         count1 +=1
-        test.append(x)
-        if count1 == 5000:
-            break
+        if count1 < 5000:
+            pass
+        else:
+            test.append(x)
 
 
     counter = 0
