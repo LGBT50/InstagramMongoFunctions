@@ -10,7 +10,10 @@ cursor = db.TokFl.aggregate([{'$project':{"TikTok.user.signature":1,"TikTok.aver
 ins_ids = []
 x = 0
 for document in cursor:
-    if "lgbt" in str(document["TikTok"]["user"]["signature"].lower()):
-        ins_ids.append(document["TikTok"]["user"]["unique_id"])
-    print(len(ins_ids))
+    try:
+        if "@gmurray11" in str(document["TikTok"]["user"]["signature"].lower()):
+            ins_ids.append(document["TikTok"]["user"]["unique_id"])
+        #print(len(ins_ids))
+    except:
+        pass
 print(len(ins_ids))

@@ -7,8 +7,8 @@ from Folder.db.dbConnect import connect
 
 db = connect("TikScrape")
 cursor = db.TokFl.find({})
-#cursor = db.TokFl.find({ "TikTok.user.signature": { '$regex': "lgbt", '$options': "i" } })
-cursor = db.TokFl.find({ "TikTok.averages.superString": { '$regex': "^lgbt", '$options': "im" } })
+#cursor = db.TokFl.find({ "TikTok.user.signature": { '$regex': "@gmurray11", '$options': "i" } })
+cursor = db.TokFl.find({ "TikTok.averages.superString": { '$regex': "lgbt", '$options': "i" } })
 
 ins_ids = []
 x = 0

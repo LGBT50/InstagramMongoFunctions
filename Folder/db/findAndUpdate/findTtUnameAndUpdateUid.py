@@ -15,7 +15,9 @@ def findAndUpdateUser(db, user):
     try:
         db.TokFl.find_one_and_update({'TikTok.user.ins_id': user["username"]},
         {"$set":
-        {"Instagram.user.uid":user["id"],
+        {"NCAA.sport":"basketball",
+        "NCAA.division":1,
+            "Instagram.user.uid":user["id"],
         "Instagram.user.follower_count":user["edge_followed_by"]['count'],
         "Instagram.user.following_count":user["edge_follow"]['count'],
         "Instagram.user.posts":user["edge_owner_to_timeline_media"]['count'],

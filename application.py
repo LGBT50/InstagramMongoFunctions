@@ -6,6 +6,8 @@ import time
 from Folder.routes.getUserId import addInsId
 from Folder.db.Finders.dbFindInstagram import findIns_id
 from Folder.ParentFunctions.AddNewUsers.addUserByTTName import addNewUsers
+from addNCAA import getNCAABBall
+
 
 #initializing app, api, and cors
 application = Flask(__name__)
@@ -42,6 +44,17 @@ class updateTikTokUsers(Resource):
         return "Success"
     def get(self):
         return "Nothing to GET"
+class AddNCAABaskeBall(Resource):
+    def post(self):
+        userNames = getNCAABBall()
+        count = addNewUsers(userNames)
+        
+        print("application function--- updated Docs shows:"+str(count))
+        print("Instagrams Scraped and Added to the db")
+        return "Success"
+    def get(self):
+        return "Nothing to GET"
+
 
 api.add_resource(updateTikTokUsers, "/updateTikTokUsers")
 
