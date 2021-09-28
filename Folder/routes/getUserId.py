@@ -58,7 +58,7 @@ def addInsId(ins_ids):
                     
                 print(len(out))
                 print(f' reqest Took {time2-time1:.2f} s')
-    print(f' average request took {time2-time1/len(out):.2f} s')
+    #print(f' average request took {time2-time1/len(out):.2f} s')
     print(f'Took {time2-time1:.2f} s')
     print(len(out))
     return out

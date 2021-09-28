@@ -14,12 +14,9 @@ def addNewUsers(user_ids):
     db = connect('TikScrape')
     test = []
     count1 = 0
-    for x in user_ids:
-        count1 +=1
-        if count1 < 11434:
-            pass
-        else:
-            test.append(x)
+    #for x in user_ids:
+       # count1 +=1
+        #test.append(x)
 
 
     counter = 0
@@ -29,7 +26,7 @@ def addNewUsers(user_ids):
     #gets documents from how many we want to scrape
     subset = []
     i = 0
-    for x in test:
+    for x in user_ids:
         counter+=1
         subset.append(x)
         print(x)
@@ -52,7 +49,7 @@ def addNewUsers(user_ids):
                         
 
                 time2 = time.time()
-            print(f'Took {time2-time1:.2f} s')
+            #sprint(f'Took {time2-time1:.2f} s')
             subset = []
         
         userCount -=1
