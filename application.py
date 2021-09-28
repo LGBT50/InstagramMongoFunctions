@@ -57,6 +57,8 @@ class AddNCAABaskeBall(Resource):
 
 
 api.add_resource(updateTikTokUsers, "/updateTikTokUsers")
+api.add_resource(AddNCAABaskeBall, "/AddNCAABaskeBall")
+
 
 
 
