@@ -47,8 +47,8 @@ class updateTikTokUsers(Resource):
 class AddNCAABaskeBall(Resource):
     def post(self):
         userNames = getNCAABBall()
+        print(len)
         count = addNewUsers(userNames)
-        
         print("application function--- updated Docs shows:"+str(count))
         print("Instagrams Scraped and Added to the db")
         return "Success"

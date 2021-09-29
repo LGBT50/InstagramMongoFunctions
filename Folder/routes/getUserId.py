@@ -25,14 +25,14 @@ def addInsId(ins_ids):
         }
 
     def load_url(querystring):
-        querystring = querystring["ins_id"]
+        #uerystring = #querystring["ins_id"]
         print(querystring)
         response = requests.request("GET", url, headers=headers, params={"username":querystring,"wrap":"0"})
         while response.status_code == 429:
             print("API server is getting too many requests")
             time.sleep(10)
             response = requests.request("GET", url, headers=headers, params={"username":querystring,"wrap":"0"})
-        #print(response.json())
+        print(response.json())
         #test = {response.json(), querystring["tt_user"]}
         return response.json()
 
@@ -43,11 +43,13 @@ def addInsId(ins_ids):
         for future in concurrent.futures.as_completed(future_to_url):
             try:
                 data = future.result()
+                print(data)
                 out.append(data)
             except Exception as exc:
                 data1 = str(type(exc))
                 exceptions.append(data1)
-                print(exc)
+                
+                print("EXCEPTION IS:"+str(exc))
             finally:
                 time2 = time.time()
                 if len(out) %10 ==0:
